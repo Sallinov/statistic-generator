@@ -174,35 +174,10 @@ function chartHelper (values, labels, selector, legend) {
     const options = {
         series: values,
         chart: {
-            width: '100%',
+            width: '450px',
             type: 'pie',
         },
         labels: labels.map(label => `вариант ${label}`),
-        plotOptions: {
-          pie: {
-            donut: {
-              labels: {
-                show: true,
-                total: {
-                  showAlways: true,
-                  show: true
-                }
-              }
-            }
-          }
-        },
-        theme: {
-            monochrome: {
-                enabled: false
-            }
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    offset: -5
-                }
-            }
-        },
         title: {
             text: legend
         },
@@ -210,9 +185,6 @@ function chartHelper (values, labels, selector, legend) {
             formatter(val) {
                 return `${val.toFixed(1)}%`
             }
-        },
-        legend: {
-            show: false
         }
     }
 
