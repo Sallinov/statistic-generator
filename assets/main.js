@@ -178,6 +178,19 @@ function chartHelper (values, labels, selector, legend) {
             type: 'pie',
         },
         labels: labels.map(label => `вариант ${label}`),
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                total: {
+                  showAlways: true,
+                  show: true
+                }
+              }
+            }
+          }
+        },
         theme: {
             monochrome: {
                 enabled: false
