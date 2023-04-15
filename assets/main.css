@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+main,
+aside {
+    padding: 16px;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+main {
+    width: calc(100% - 412px);
+    box-shadow: inset 5px 0 9px 0 rgb(0 0 0 / 20%);
+}
+
+aside {
+    width: 412px;
+    max-height: 100vh;
+}
+
+.row {
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.row .field {
+    flex: 1 1 auto
+}
+
+.row > * + * {
+    margin-left: 12px;
+}
+
+.row + .row {
+    position: relative;
+    margin-top: 13px;
+    padding-top: 12px;
+}
+
+.row + .row::before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    content: '';
+    display: block;
+    background-color: #cfcfcf;
+}
+
+.row.hidden {
+    display: none;
+}
+
+.row.long {
+    flex-wrap: wrap;
+}
+
+.row.long > * + * {
+    margin: 0;
+}
+
+.row.long .field {
+    flex: 1 1 66%
+}
+
+.row.long .field + .field {
+    flex: 1 1 34%
+}
+
+.row.long > .row + .row::before {
+    content: unset;
+    display: unset;
+}
+
+main,
+aside,
+.field,
+button,
+.field fieldset,
+.field .field__error,
+.field label[for]::after,
+.field label[for]::before,
+.tabs__elem.open .tabs__content {
+    transition: all .3s ease-in-out;
+}
+
+.field input::-webkit-outer-spin-button,
+.field input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.field input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.field input[type=radio] {
+    display: none;
+}
+
+.field fieldset {
+    position: relative;
+    padding: 0 14px 4px;
+    margin-bottom: 7px;
+    border-radius: 6px;
+    border: solid 1px #000;
+}
+
+.field:not(.no-hover) fieldset:hover {
+    border-color: #cfcfcf;
+}
+
+.field legend {
+    margin: 0 -6px;
+    padding: 0 6px;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.field label[for] {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.field label[for]:hover::before {
+    border-color: #cfcfcf;
+}
+
+.field label[for]::after,
+.field label[for]::before {
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    border: solid 1px #000;
+    content: '';
+    display: block;
+}
+
+.field label[for]::after {
+    top: 9px;
+    left: 3px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 10px;
+}
+
+.field input[type=radio]:checked + label[for]::after {
+    background-color: #000;
+}
+
+.field input[type=radio]:checked + label[for]::before {
+    border-color: #cfcfcf;
+}
+
+.field .field__error {
+    font-size: 10px;
+    line-height: 14px;
+    max-height: 0px;
+    color: red;
+    overflow: hidden;
+}
+
+.field.error fieldset {
+    border-color: red;
+}
+
+.field.valid fieldset,
+.field:not(.no-hover) fieldset:focus,
+.field:not(.no-hover) fieldset:active,
+.field:not(.no-hover) fieldset:focus-within,
+.field:not(.no-hover) fieldset:focus-visible {
+    border-color: green;
+}
+
+.field.error .field__error,
+.tabs__elem.open .tabs__content {
+    overflow: hidden;
+    max-height: 1000px;
+}
+
+.field fieldset > *:not(legend) {
+    width: 100%;
+    padding: 6px 0;
+    display: block;
+}
+
+button {
+    margin-top: 7px;
+    padding: 10px 16px 8px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:not([disabled]):hover {
+    color: #000;
+    background-color: #cfcfcf;
+}
+
+button[disabled] {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+header,
+footer {
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+body.default aside {
+    width: 100%;
+}
+
+body.default main {
+    width: 0;
+}
+
+body.default {
+    overflow: hidden;
+}
+
+.tabs__elem .tabs__content {
+    padding: 0 12px;
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs__elem.open .tabs__content {
+    padding: 12px 10px;
+}
+
+.tabs__activator {
+    width: 100%;
+}
+
+.tabs__elem.open .tabs__activator {
+    border-radius: 6px 6px 0 0;
+}
+
+.tabs__elem.open .tabs__content {
+    border: solid 1px #000;
+    border-radius: 0 0 6px 6px;
+}
+
+.tabs__elem .tabs__activator {
+    margin-top: 0;
+}

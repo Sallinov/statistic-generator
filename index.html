@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap" rel="stylesheet">
+    <link href="assets/styles.css" rel="stylesheet">
+    <link href="assets/main.css" rel="stylesheet">
+    <script>
+        window.Promise || document.write(
+            '<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>'
+        )
+        window.Promise || document.write(
+            '<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"><\/script>'
+        )
+        window.Promise || document.write(
+            '<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"><\/script>'
+        )
+    </script>
+    <script src="assets/apexcharts.min.js"></script>
+</head>
+<body class="default">
+    <header></header>
+    <aside>
+        <section class="row js-question-counter">
+            <div class="field">
+                <fieldset>
+                    <legend>Кол-во вопросов</legend>
+                    <input name="questions" type="number" min="1" max="50"/>
+                </fieldset>
+                <div class="field__error">
+                    Число от 1 до 50
+                </div>
+            </div>
+
+            <button>применить</button>
+        </section>
+        <section class="row hidden js-sex-status">
+            <div class="field no-hover">
+                <fieldset>
+                    <legend>Разбика по полам (Ж и М)?</legend>
+                    <input checked type="radio" id="on" name="sex" value="on">
+                    <label for="on">
+                        <div>Включить</div>
+                    </label>
+                    <input type="radio" id="off" name="sex" value="off">
+                    <label for="off">
+                        <div>Выключить</div>
+                    </label>
+                </fieldset>
+            </div>
+
+            <button>применить</button>
+        </section>
+        <section class="row long hidden js-question-data"></section>
+        <section class="row hidden js-people-counter">
+            <div class="field">
+                <fieldset>
+                    <legend>Кол-во прошедших</legend>
+                    <input name="questions" type="number" min="1" max="256"/>
+                </fieldset>
+                <div class="field__error">
+                    Число от 1 до 256
+                </div>
+            </div>
+            <button>применить</button>
+        </section>
+        <section class="row hidden js-genegate-result">
+            <button>Сформировать отчет</button>
+        </section>
+    </aside>
+    <main>
+        <section class="tabs js-tabs"></section>
+    </main>
+    <footer></footer>
+<script src="assets/main.js"></script>
+</body>
+</html>
